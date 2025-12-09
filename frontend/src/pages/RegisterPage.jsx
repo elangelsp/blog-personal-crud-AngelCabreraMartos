@@ -18,7 +18,7 @@ const RegisterPage = () => {
       const user = await registerUser(name, username, password);
       console.log(user);
       if (user.success) {
-        login(user.username);
+        login(user.name);
         navigate('/');
       }
     } catch (error) {

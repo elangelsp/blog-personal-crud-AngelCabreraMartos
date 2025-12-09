@@ -15,7 +15,7 @@
       "role": "editor"
     },
     {
-      "id": 3,
+      "id": "3",
       "username": "angel",
       "password": "123",
       "name": "Angel Cabrera Martos",
@@ -91,6 +91,20 @@
       "author": "Dev Junior",
       "content": "El ejemplo de PrivateRoute me ha venido genial, gracias.",
       "createdAt": "2025-09-06T09:15:00.000Z"
+    },
+    {
+      "id": 3,
+      "postId": "1",
+      "author": "Invitado",
+      "content": "asdfas",
+      "createdAt": "2025-12-09T15:03:33.904Z"
+    },
+    {
+      "id": 4,
+      "postId": "1",
+      "author": "Angel Cabrera Martos",
+      "content": "Hola buenas",
+      "createdAt": "2025-12-09T15:03:53.757Z"
     }
   ],
   "categories": [

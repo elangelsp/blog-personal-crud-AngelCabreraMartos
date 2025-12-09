@@ -6,22 +6,17 @@ const PostList = () => {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    fetchPosts()
-    .then(data => {
-      return data.json()
-    })
-    .then(postsData => {
 
-      if(!postsData.posts) {
-        return console.log("Error al obtener los posts");
+    const response = async () => {
+      try {
+        const data = await fetchPosts();
+        setPosts(data.posts);
+      } catch (error) {
+        console.log("Error al obtener los posts: ", error);
       }
+    }
 
-      setPosts(postsData.posts)
-
-    })
-    .catch(error => {
-      console.log(error)
-    })
+    response();
   }, [])
 
   return (
@@ -30,7 +25,7 @@ const PostList = () => {
         <h2>Posts</h2>
         <div className="flex flex-col gap-4 p-4">
           {posts.map(post => {
-            if (!post.published) return null; // si no está publicado, no renderiza nada
+            if (!post.published) return null;
             return <PostCard key={post.id} post={post} />;
           })}
         </div>

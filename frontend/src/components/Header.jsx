@@ -1,9 +1,15 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext';
 
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const logoutSecure = () => {
+    navigate('/');
+    logout();
+  }
 
 
   return (
@@ -21,10 +27,10 @@ const Header = () => {
         {user ? (
           <div className="flex items-center gap-4">
             <span className="text-sm text-gray-300">
-              Hola, <span className="font-medium text-white">{user.username}</span>
+              Hola, <span className="font-medium text-white">{user.name}</span>
             </span>
             <button
-              onClick={logout}
+              onClick={logoutSecure}
               className="hover:bg-red-700 text-white text-sm px-3 py-1 rounded-md"
             >
               Logout

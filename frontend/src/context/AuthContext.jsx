@@ -12,9 +12,9 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  const login = (username) => {
-    setUser({ username });
-    localStorage.setItem('user', JSON.stringify({ username }));
+  const login = (name) => {
+    setUser({ name });
+    localStorage.setItem('user', JSON.stringify({ name }));
   };
 
   const logout = async () => {

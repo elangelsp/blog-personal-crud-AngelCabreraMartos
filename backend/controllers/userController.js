@@ -18,7 +18,7 @@ export const loginUser = async (req, res) => {
 
     for (const user of users) {
       if (user.username === username && user.password === password) {
-        return res.status(200).json({ message: 'Login successful', success: true, username: user.username } );
+        return res.status(200).json({ message: 'Login successful', success: true, name: user.name } );
       }
     }
 
@@ -58,21 +58,10 @@ export const registerUser = async (req, res) => {
         })
       });
 
-      res.status(201).json({ message: 'Usuario registrado con éxito', success: true, username: user.username });
+      res.status(201).json({ message: 'Usuario registrado con éxito', success: true, name: user.name });
 
     } catch (error) {
       res.status(500).json({ message: 'Error al registrar usuario', success: false });
     };
 }
 
-export const getPosts = async (req, res) => {
-  try {
-    
-    const response = await fetch(`${DB_URL}/posts?_sort=createdAt&_order=desc`);
-    const posts = await response.json();
-    res.status(200).json({ posts, success: true });
-
-  } catch (error) {
-    res.status(500).json({ message: 'Error al obtener los posts', success: false });
-  }
-}

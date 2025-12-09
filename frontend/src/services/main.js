@@ -11,12 +11,14 @@ export const loginUser = async (username, password) => {
             },
             body: JSON.stringify({ username, password })
         });
+        const data = await response.json();
 
-        if (!response.ok) {
-            console.log("Login failed");
+        if (data.success) {
+            console.log("Login succesfull");
+            return data;
         }
 
-    return response.json();
+        console.log("Login failed");
 
     } catch (error) {
         console.log(error);
@@ -35,12 +37,15 @@ export const registerUser = async (name, username, password) => {
             },
             body: JSON.stringify({ username, password, name })
         });
+        const data = await response.json();
 
-        if (!response.ok) {
-            console.log("Register failed");
+        if (data.success) {
+            console.log("Usuario registrado con exito");
+            return data;
         }
 
-        return response.json();
+        console.log("Register failed");
+
     }catch (error) {
         console.log(error);
     }
@@ -57,11 +62,86 @@ export const fetchPosts = async () => {
             }
         });
 
-        if (!response.ok) {
-            console.log("Error al obtener los posts");
+        const data = await response.json();
+        console.log(data);
+
+        if(data.success){
+            return data;
+        }
+        console.log("Error al obtener los posts");
+        
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const fetchPostById = async (postId) => {
+    try {
+        const response = await fetch(`${apiUrl}/api/posts/${postId}`, {
+            method: 'GET',
+            headers: {  
+                'Content-Type': 'application/json'
+            }
+        });
+
+        const data = await response.json();
+
+        if(data.success){
+            return data;
+        }
+        console.log("Error al obtener el post");
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+// Comentarios
+
+export const fetchCommentsByPostId = async (postId) => {
+    try {
+        const response = await fetch(`${apiUrl}/api/posts/${postId}/comments`, {
+            method: 'GET',
+            headers: {  
+                'Content-Type': 'application/json'
+            }
+        });
+
+        const data = await response.json();
+
+        if(data.success){
+            return data;
+        }
+        console.log("Error al obtener los comentarios");
+
+    } catch (error) {
+        console.log(error);
+    }
+} 
+
+export const sendComment = async (postId, author, content) => {
+    try {
+        
+        const response = await fetch(`${apiUrl}/api/posts/comments/post`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                postId: postId,
+                author: author,
+                content: content,
+            })
+        });
+        const data = await response.json();
+
+        if(data.success){
+            console.log("Comentario posteado con exito");
+            return data;
         }
 
-        return response;
+        console.log("Error al postear el comentario");
 
     } catch (error) {
         console.log(error);
