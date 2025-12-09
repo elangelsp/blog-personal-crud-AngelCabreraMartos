@@ -16,9 +16,8 @@ const RegisterPage = () => {
     e.preventDefault();
     try {
       const user = await registerUser(name, username, password);
-      console.log(user);
       if (user.success) {
-        login(user.name);
+        login(user.name, user.userId);
         navigate('/');
       }
     } catch (error) {

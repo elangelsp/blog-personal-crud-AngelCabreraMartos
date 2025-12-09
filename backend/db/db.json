@@ -25,11 +25,10 @@
   "posts": [
     {
       "id": "1",
-      "title": "Bienvenido a mi blog",
+      "title": "Bienvenido a mi blog angel",
       "slug": "bienvenido-a-mi-blog",
-      "authorId": 1,
-      "authorName": "Admin Principal",
-      "excerpt": "Primer post de bienvenida donde explico la temática del blog.",
+      "authorId": 3,
+      "authorName":  "Angel Cabrera Martos",
       "content": "¡Hola! Este es el primer post del blog. Aquí contaré novedades, tutoriales y reflexiones sobre desarrollo web.",
       "coverImage": "/covers/welcome.jpg",
       "tags": [
@@ -37,8 +36,8 @@
         "general"
       ],
       "published": true,
-      "createdAt": "2025-09-01T09:00:00.000Z",
-      "updatedAt": "2025-09-01T09:00:00.000Z"
+      "createdAt": "2025-12-09T21:31:49.766Z",
+      "updatedAt": "2025-12-09T21:31:49.766Z"
     },
     {
       "id": "2",
@@ -60,21 +59,37 @@
     },
     {
       "id": "3",
-      "title": "Uso básico de fetch para CRUD",
-      "slug": "uso-basico-de-fetch-para-crud",
-      "authorId": 1,
-      "authorName": "Admin Principal",
-      "excerpt": "Ejemplos de GET, POST, PUT/PATCH y DELETE contra una API REST usando fetch.",
-      "content": "Con fetch puedes hacer peticiones HTTP nativas. Maneja headers, JSON.stringify en el body y estados de respuesta.",
+      "title": "uso-basico-de-fetch-para-crud",
+      "slug": "Uso básico de fetch para CRUD",
+      "authorId": 3,
+      "authorName": "Angel Cabrera Martos",
+      "excerpt": "Con fetch puedes hacer peticiones HTTP nativas. Maneja headers, JSON.stringify en el body y estados de respuesta.",
+      "content": "Ejemplos de GET, POST, PUT/PATCH y DELETE contra una API REST usando fetch.",
       "coverImage": "/covers/fetch.jpg",
       "tags": [
         "javascript",
         "fetch",
         "api"
       ],
-      "published": false,
-      "createdAt": "2025-09-10T16:00:00.000Z",
-      "updatedAt": "2025-09-10T16:00:00.000Z"
+      "published": true,
+      "createdAt": "2025-12-09T21:45:30.226Z",
+      "updatedAt": "2025-12-09T21:45:30.226Z"
+    },
+    {
+      "id": 4,
+      "title": "Titulo",
+      "slug": "slug",
+      "authorId": 3,
+      "authorName": "Angel Cabrera Martos",
+      "excerpt": "content",
+      "content": "excerpt",
+      "coverImage": "coverImage",
+      "tags": [
+        "tag"
+      ],
+      "published": true,
+      "createdAt": "2025-12-09T21:59:21.163Z",
+      "updatedAt": "2025-12-09T21:59:21.163Z"
     }
   ],
   "comments": [
@@ -93,15 +108,15 @@
       "createdAt": "2025-09-06T09:15:00.000Z"
     },
     {
-      "id": 3,
-      "postId": "1",
+      "id": "3",
+      "postId": null,
       "author": "Invitado",
       "content": "asdfas",
       "createdAt": "2025-12-09T15:03:33.904Z"
     },
     {
-      "id": 4,
-      "postId": "1",
+      "id": "4",
+      "postId": null,
       "author": "Angel Cabrera Martos",
       "content": "Hola buenas",
       "createdAt": "2025-12-09T15:03:53.757Z"

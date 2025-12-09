@@ -15,9 +15,8 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       const user = await loginUser(username, password);
-      console.log(user.success);
       if(user.success){
-        login(user.name);
+        login(user.name, user.userId);
         navigate('/');
       }
     } catch (error) {

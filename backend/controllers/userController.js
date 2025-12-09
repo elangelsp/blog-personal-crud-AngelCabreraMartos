@@ -18,7 +18,7 @@ export const loginUser = async (req, res) => {
 
     for (const user of users) {
       if (user.username === username && user.password === password) {
-        return res.status(200).json({ message: 'Login successful', success: true, name: user.name } );
+        return res.status(200).json({ message: 'Login successful', success: true, name: user.name, userId: user.id } );
       }
     }
 
@@ -58,7 +58,7 @@ export const registerUser = async (req, res) => {
         })
       });
 
-      res.status(201).json({ message: 'Usuario registrado con éxito', success: true, name: user.name });
+      res.status(201).json({ message: 'Usuario registrado con éxito', success: true, name: user.name, userId: id });
 
     } catch (error) {
       res.status(500).json({ message: 'Error al registrar usuario', success: false });
