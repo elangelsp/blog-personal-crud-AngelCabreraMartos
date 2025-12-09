@@ -16,8 +16,10 @@ const LoginPage = () => {
     try {
       const user = await loginUser(username, password);
       console.log(user);
-      login(user.username);
-      navigate('/');
+      if(user.success){
+        login(user.username);
+        navigate('/');
+      }
     } catch (error) {
       console.error('Login failed:', error);
     }

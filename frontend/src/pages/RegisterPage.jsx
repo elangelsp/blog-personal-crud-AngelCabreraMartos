@@ -19,8 +19,8 @@ const RegisterPage = () => {
       console.log(user);
       if (user.success) {
         login(user.username);
+        navigate('/');
       }
-      navigate('/');
     } catch (error) {
       console.error('Register failed:', error);
     }
